@@ -1,3 +1,4 @@
+#![cfg(not(target_os = "macos"))]
 //! Example showcasing [`gpu-allocator`] with types and functions from the [`windows`] crate.
 use gpu_allocator::{
     d3d12::{

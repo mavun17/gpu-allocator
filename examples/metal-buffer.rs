@@ -1,12 +1,12 @@
-use gpu_allocator::metal::{AllocationCreateDesc, Allocator, AllocatorCreateDesc};
-use log::info;
-use objc2_foundation::NSArray;
-use objc2_metal::{
-    MTLCreateSystemDefaultDevice, MTLDevice as _, MTLHeap, MTLPixelFormat,
-    MTLPrimitiveAccelerationStructureDescriptor, MTLStorageMode, MTLTextureDescriptor,
-};
-
+#[cfg(target_os = "macos")]
 fn main() {
+    use gpu_allocator::metal::{AllocationCreateDesc, Allocator, AllocatorCreateDesc};
+    use log::info;
+    use objc2_foundation::NSArray;
+    use objc2_metal::{
+        MTLCreateSystemDefaultDevice, MTLDevice as _, MTLHeap, MTLPixelFormat,
+        MTLPrimitiveAccelerationStructureDescriptor, MTLStorageMode, MTLTextureDescriptor,
+    };
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("trace")).init();
 
     // Allow the innards of objc2-metal to link the static function below:
@@ -145,3 +145,6 @@ fn main() {
         info!("Allocation and deallocation of Acceleration structure was successful.");
     }
 }
+
+#[cfg(not(target_os = "macos"))]
+fn main() {}
