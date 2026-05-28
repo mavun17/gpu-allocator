@@ -16,7 +16,6 @@ include = [
     "/README.md",
     "/LICENSE-*",
     "/src",
-    "/examples",
 ]
 
 [package.metadata.docs.rs]
@@ -75,18 +74,6 @@ features = [
 objc2-metal = { version = "0.3.2", default-features = false, features = [
     "MTLPixelFormat",
 ] }
-
-[[example]]
-name = "vulkan-buffer"
-required-features = ["vulkan", "ash/loaded"]
-
-[[example]]
-name = "d3d12-buffer-winrs"
-required-features = ["d3d12"]
-
-[[example]]
-name = "metal-buffer"
-required-features = ["metal"]
 
 [features]
 std = ["presser/std"]
