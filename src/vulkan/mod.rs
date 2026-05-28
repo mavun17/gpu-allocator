@@ -6,7 +6,8 @@ use core::{fmt, marker::PhantomData};
 use std::backtrace::Backtrace;
 
 use ash::vk;
-use log::{debug, Level};
+use log::debug;
+pub use log::Level;
 
 #[cfg(feature = "visualizer")]
 mod visualizer;
