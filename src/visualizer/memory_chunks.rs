@@ -98,8 +98,8 @@ pub(crate) fn render_memory_chunks_ui<'a>(
                             egui::CornerRadius::ZERO,
                             color_scheme
                                 .get_allocation_type_color(data[cursor_idx].allocation_type),
-                            egui::Stroke::new(1.0, Color32::BLACK),
-                            egui::StrokeKind::Outside
+                            egui::Stroke::new(1.0_f32, Color32::BLACK),
+                            egui::StrokeKind::Outside,
                         );
 
                         resp.on_hover_ui_at_pointer(|ui| {
